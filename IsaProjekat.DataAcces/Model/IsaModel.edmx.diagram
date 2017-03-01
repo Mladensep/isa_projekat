@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ebb457b6c7bf40bfaf20bf5dec0935bd" Name="Diagram1">
+        <EntityTypeShape EntityType="isadbModel.AspNetRole" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="isadbModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="13" />
+        <EntityTypeShape EntityType="isadbModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="4.75" />
+        <EntityTypeShape EntityType="isadbModel.AspNetUser" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="isadbModel.FoodManu" Width="1.5" PointX="9.75" PointY="16.25" />
+        <EntityTypeShape EntityType="isadbModel.Reservation" Width="1.5" PointX="12" PointY="9" />
+        <EntityTypeShape EntityType="isadbModel.Restaurant" Width="1.5" PointX="7.5" PointY="11.375" />
+        <EntityTypeShape EntityType="isadbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="isadbModel.Table" Width="1.5" PointX="9.75" PointY="10.375" />
+        <EntityTypeShape EntityType="isadbModel.User" Width="1.5" PointX="5.25" PointY="8.125" />
+        <EntityTypeShape EntityType="isadbModel.Visit" Width="1.5" PointX="9.75" PointY="7" />
+        <AssociationConnector Association="isadbModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="isadbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="isadbModel.FK_User_AspNetUsers" />
+        <AssociationConnector Association="isadbModel.FK_FoodManu_Restaurant" />
+        <AssociationConnector Association="isadbModel.FK_Reservation_Table" />
+        <AssociationConnector Association="isadbModel.FK_Reservation_User" />
+        <AssociationConnector Association="isadbModel.FK_Restaurant_User" />
+        <AssociationConnector Association="isadbModel.FK_Table_Restaurant" />
+        <AssociationConnector Association="isadbModel.FK_Visit_Restaurant" />
+        <AssociationConnector Association="isadbModel.FK_Visit_User" />
+        <AssociationConnector Association="isadbModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

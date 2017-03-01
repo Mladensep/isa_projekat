@@ -1,0 +1,88 @@
+﻿@model IsaProjekat.WebApp.Models.RestaurantModel
+
+@{
+    ViewBag.Title = "RestaurantDetail";
+}
+
+<h2>RestaurantDetail</h2>
+
+<div>
+    @if (Model.IsAdmin)
+    {
+        <a href="@Url.Action("EditResaurant", "Resaurant", new { id = Model.Id })" class="btn btn-primary">Edit</a>
+    }
+    else if (Model.IsManager)
+    {
+        <a href="@Url.Action("Menu", "Resaurant", new { id = Model.Id })" class="btn btn-primary">Menus</a>
+    }
+
+
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManagerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagareName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManagareName)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="col-md-6">
+    @foreach (var table in Model.Tables)
+    {
+        if (table.IsEnabled)
+        {
+            <a href = "@Url.Action("Reservation", "Resaurant", new { id = table.Id }) " class = "btn btn-primary">
+                @table.Position
+            </a>
+        }
+        else
+        {
+            <a href="@Url.Action("Reservation", "Resaurant", new { id = table.Id }) " class="btn btn-danger">
+                @table.Position
+            </a>
+
+        }
+    }
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
